@@ -8,12 +8,14 @@ var User = require('./Models/UserModel');
 dotenv.config()
 
 
-//importing the database enviornment variables 
+//importing the database enviornment variables
+//these will unused for now... 
 var dbUsername = process.env.DB_USERNAME
 var dbPassword = process.env.DB_PASSWORD
 
 //connecting to the Database
-url = `mongodb+srv://${dbUsername}:${dbPassword}@cluster0.qrms5.mongodb.net/utterNnSense?retryWrites=true&w=majority`
+//added my own username just for the time being :-)
+url = `mongodb+srv://ivy:lisphacker@cluster0.qrms5.mongodb.net/utterNnSense?retryWrites=true&w=majority`
 mongoose.connect(url, {useNewUrlParser: true})
 
 
