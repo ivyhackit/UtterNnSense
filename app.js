@@ -8,15 +8,18 @@ var User = require('./Models/UserModel');
 dotenv.config()
 
 
-//importing the database enviornment variables
-//these will unused for now... 
+//importing the database enviornment variables 
+//these will unused for now...
 var dbUsername = process.env.DB_USERNAME
 var dbPassword = process.env.DB_PASSWORD
 
 //connecting to the Database
-//added my own username just for the time being :-)
-url = `mongodb+srv://ivy:lisphacker@cluster0.qrms5.mongodb.net/utterNnSense?retryWrites=true&w=majority`
-mongoose.connect(url, {useNewUrlParser: true})
+url = `mongodb+srv://ivy:lisphacker@cluster0.qrms5.mongodb.net/utterNn?retryWrites=true&w=majority`
+mongoose.connect(url, {
+    useNewUrlParser: true,
+//gets ride of error message 
+    useUnifiedTopology: true
+  })
 
 
 //confirming the connection to the database
@@ -40,4 +43,16 @@ Dakotah.save((err, user)=> {
 
 })
 
+//Testing....
+const app = Express();
+const path = require('path');
+const port = 3000
+const router = Express.Router();
 
+router.get ('/', (req,res) => {
+	res.sendFile(path.join(__dirname+'/index.html'));
+});
+app.use('/', router);
+app.listen(port, () => {
+	console.log("Sucessfully submited")
+});

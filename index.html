@@ -1,0 +1,42 @@
+<html>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="custom.css">
+  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.0/umd/popper.min.js"></script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.5.2/js/bootstrap.min.js"></script>
+  <script src="https://unpkg.com/react@16/umd/react.production.min.js"></script>
+  <script src="https://unpkg.com/react-dom@16/umd/react-dom.production.min.js"></script>
+  <script src="https://unpkg.com/babel-standalone@6.15.0/babel.min.js"></script>
+  <style type="text/css">
+    .navbar-brand {
+  color: rgb(72,195,77);
+}
+  </style>
+  <body>
+
+<nav class="navbar navbar-expand-lg">
+  <a class="navbar-brand">Utter Non-Sense</a>
+  <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNav" aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+    <span class="navbar-toggler-icon"></span>
+  </button>
+  
+</nav>
+  <header class="text-center">
+    <h1 class="font-italic">Hello, world!</h1>
+     <div id="root"></div>
+  </header>
+
+    <script type="text/babel">
+      function tick() {
+  const element = (
+    <div>
+      <h2>It is {new Date().toLocaleTimeString()} btw...</h2>
+    </div>
+  );
+  ReactDOM.render(element, document.getElementById('root'));
+}
+
+setInterval(tick, 1000);
+    </script>
+  </body>
+</html>
